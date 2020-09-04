@@ -1,13 +1,15 @@
 import numpy as np
 import cv2
 import imageio
-# from scipy.ndimage import filters
 from scipy.ndimage import gaussian_filter
-img = 'demo.jpg'
+img = 'images/demo.jpg'
+
+# def greyscale(rgb):
+#     image = cv2.imread(img)
+#     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 def greyscale(rgb):
-    
-    return np.dot(rgb[...,:3],[0.299,0.587,0.114])
+    return np.dot(rgb[...,:3],[0.3,0.6,0.1])
 
 def dodge(front,back):
     result = front*255/(255-back)
@@ -16,9 +18,13 @@ def dodge(front,back):
     return result.astype('uint8')
 
 i = imageio.imread(img)
+
 g = greyscale(i)
+
 s = 255-g
+
 b = gaussian_filter(s,sigma=10)
+
 r = dodge(b,g)
 
-cv2.imwrite('sketch.png',r)
+cv2.imwrite('images/sketch.png',r)
