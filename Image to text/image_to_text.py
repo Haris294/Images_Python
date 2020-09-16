@@ -5,7 +5,7 @@ from googletrans import Translator
 
 img = Image.open('text1.png')      
 print(img)                           
-pytesseract.pytesseract.tesseract_cmd ='C:/Program Files (x86)/Tesseract-OCR/tesseract.exe'   
+pytesseract.pytesseract.tesseract_cmd ='/usr/local/Cellar/tesseract/4.1.1/bin/'   
 result = pytesseract.image_to_string(img)    
 with open('abc.txt',mode ='w') as file:
                  file.write(result) 
