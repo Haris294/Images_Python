@@ -18,6 +18,6 @@ k = p.translate(result,dest='german')
 print(k) 
 engine = pyttsx3.init() 
   
-# an audio will be played which speaks the test if pyttsx3 recognizes it 
+# an audio will be played which speaks the text if pyttsx3 recognizes it 
 engine.say(k)                              
 engine.runAndWait()
