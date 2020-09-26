@@ -2,11 +2,7 @@ import numpy as np
 import cv2
 import imageio
 from scipy.ndimage import gaussian_filter
-img = 'images/demo.jpg'
-
-# def greyscale(rgb):
-#     image = cv2.imread(img)
-#     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+img = 'demo.jpg'
 
 def greyscale(rgb):
     return np.dot(rgb[...,:3],[0.3,0.6,0.1])
