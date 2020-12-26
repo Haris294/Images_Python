@@ -9,7 +9,6 @@ edges = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_
 
 color = cv2.bilateralFilter(img, 9, 300, 300)
 cartoon = cv2.bitwise_and(color, color, mask = edges)
-
 cv2.imshow("Image", img)
 cv2.imshow("Cartoon", cartoon)
 cv2.imshow("color", color)
