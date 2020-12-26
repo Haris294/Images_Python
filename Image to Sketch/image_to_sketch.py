@@ -14,9 +14,7 @@ def dodge(front,back):
     return result.astype('uint8')
 
 i = imageio.imread(img)
-
 g = greyscale(i)
-
 s = 255-g
 
 b = gaussian_filter(s,sigma=10)
