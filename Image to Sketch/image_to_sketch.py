@@ -18,5 +18,4 @@ g = greyscale(i)
 s = 255-g
 b = gaussian_filter(s,sigma=10)
 r = dodge(b,g)
-
 cv2.imwrite('images/sketch.png',r)
